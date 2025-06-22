@@ -5,6 +5,7 @@
 // import { useState } from "react";
 
 import Counter from "./components/Counter"
+import { AppContextProvider} from "./context/CounterContext"
 
 // function App() {
 //   const [count, setCount] = useState(1);
@@ -94,7 +95,9 @@ import Counter from "./components/Counter"
 function App() {
   return (
     <>
-    <Counter>{(num: number) => <>Current Count: {num}</>}</Counter>
+    <AppContextProvider>
+      <Counter>{(num: number) => <>Current Count: {num}</>}</Counter>
+    </AppContextProvider>
     </>
   )
 }
